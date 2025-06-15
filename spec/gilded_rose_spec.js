@@ -76,4 +76,11 @@ describe("Gilded Rose", function()
     update_quality();
     expect(items[0].quality).toEqual(0);
   });
+
+  it("should decrease the quality of conjured items twice as fast", function() 
+  {
+    items = [new Item("Conjured Mana Cake", 3, 6)];
+    update_quality();
+    expect(items[0].quality).toEqual(4);
+  });
 });
