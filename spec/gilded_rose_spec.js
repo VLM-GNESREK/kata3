@@ -63,4 +63,17 @@ describe("Gilded Rose", function()
     update_quality();
     expect(items[0].quality).toEqual(80);
   });
+
+  it("should increase quality of concert tickets as date approaches and loose all value with concert", function() 
+  {
+    items = [new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)];
+    for(var i = 0; i < 5; i++) { update_quality(); }
+    expect(items[0].quality).toEqual(25);
+    for(var i = 0; i < 5; i++) { update_quality(); }
+    expect(items[0].quality).toEqual(35);
+    for(var i = 0; i < 5; i++) { update_quality(); }
+    expect(items[0].quality).toEqual(50);
+    update_quality();
+    expect(items[0].quality).toEqual(0);
+  });
 });
