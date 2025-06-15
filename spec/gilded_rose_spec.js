@@ -22,4 +22,11 @@ describe("Gilded Rose", function()
     expect(typeof newItem.quality).toEqual('number');
   });
 
+  it("should decrease the quality each day", function() 
+  {
+    items = [new Item("foo2", 10, 10)];
+    update_quality();
+    expect(items[0].quality).toEqual(9);
+  });
+
 });
