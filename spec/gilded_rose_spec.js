@@ -15,4 +15,11 @@ describe("Gilded Rose", function()
     expect(typeof newItem.sell_in).toEqual('number');
   });
 
+  it("should ensure every item has a 'quality' property", function()
+  {
+    const newItem = new Item("Test Item2", 5, 10);
+    expect(newItem.quality).toBeDefined();
+    expect(typeof newItem.quality).toEqual('number');
+  });
+
 });
