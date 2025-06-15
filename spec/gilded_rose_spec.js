@@ -49,4 +49,11 @@ describe("Gilded Rose", function()
     update_quality();
     expect(items[0].quality).toEqual(11);
   });
+
+  it("should never have an item with quality over 50", function() 
+  {
+    items = [new Item("foo2", 10, 55)];
+    update_quality();
+    expect(items[0].quality).toEqual(50);
+  });
 });

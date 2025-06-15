@@ -18,6 +18,10 @@ function update_quality()
 {
   for (var i = 0; i < items.length; i++) 
   {
+    if(items[i].quality > 50 && items[i].name != 'Sulfuras, Hand of Ragnaros')
+    {
+      items[i].quality = 51;
+    }
     if (items[i].name != 'Aged Brie' && items[i].name != 'Backstage passes to a TAFKAL80ETC concert') 
     {
       if (items[i].quality > 0) 
