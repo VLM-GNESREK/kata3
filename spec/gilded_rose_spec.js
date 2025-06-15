@@ -1,9 +1,18 @@
-describe("Gilded Rose", function() {
+describe("Gilded Rose", function() 
+{
 
-  it("should foo", function() {
+  it("should foo", function() 
+  {
     items = [ new Item("foo", 0, 0) ];
     update_quality();
-    expect(items[0].name).toEqual("fixme");
+    expect(items[0].name).toEqual("foo");
+  });
+
+  it("should ensure every item has a 'sell_in' property", function()
+  {
+    const newItem = new Item("Test Item", 5, 10);
+    expect(newItem.sell_in).toBeDefined();
+    expect(typeof newItem.sell_in).toEqual('number');
   });
 
 });
